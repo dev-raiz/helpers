@@ -1,6 +1,6 @@
 <?php
 
-namespace vickmeirasemijoias\app\helpers;
+namespace devraiz;
 
 trait ResponseTrait
 {
