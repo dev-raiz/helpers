@@ -4,7 +4,7 @@ namespace devraiz;
 
 trait LogTrait
 {
-    private function generate(string $content, string $path, string $file)
+    public function generate(string $content, string $path, string $file)
     {
         if (file_exists($path) === false) {
             mkdir($path, 0755, true);
