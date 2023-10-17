@@ -35,7 +35,7 @@ trait MaskTrait
         return $this->apply($whatsapp, '+55 (##) #####-####');
     }
 
-    public function maskMoney(string $value): string
+    public function maskMoney(?string $value): string
     {
         $valueConverted = '0,00';
 
