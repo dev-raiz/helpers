@@ -56,4 +56,13 @@ trait FilterTrait
 
         return (float) $decimalConverted;
     }
+
+    public function decodeSpecialChars(?string $string)
+    {
+        if (empty($string) === false) {
+            return htmlspecialchars_decode($string);
+        }
+
+        return $string;
+    }
 }
