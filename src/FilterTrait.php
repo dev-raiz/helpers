@@ -60,7 +60,7 @@ trait FilterTrait
     public function decodeSpecialChars(?string $string)
     {
         if (empty($string) === false) {
-            return htmlspecialchars_decode($string);
+            return html_entity_decode($string, ENT_QUOTES, 'UTF-8');
         }
 
         return $string;
