@@ -35,6 +35,45 @@ trait MaskTrait
         return $this->apply($whatsapp, '+55 (##) #####-####');
     }
 
+    public function maskDateDB(?string $date): string
+    {
+        if (empty($date) === false) {
+            $day   = substr($date, 0, 2);
+            $month = substr($date, 3, 2);
+            $year  = substr($date, 6, 4);
+
+            return $year . '-' . $month . '-' . $day;
+        }
+
+        return '';
+    }
+
+    public function maskDate(?string $date): string
+    {
+        if (empty($date) === false) {
+            $year  = substr($date, 0, 4);
+            $month = substr($date, 5, 2);
+            $day   = substr($date, 8, 2);
+
+            return $day . '/' . $month . '/' . $year;
+        }
+
+        return '';
+    }
+
+    public function maskTime(?string $time): string
+    {
+        if (empty($time) === false) {
+            if (strlen($time) == 4) {
+                return substr($time, 0, 2) . "h" . substr($time, 2, 2);
+            } else {
+                return substr($time, 0, 2) . "h" . substr($time, 3, 2);
+            }
+        }
+
+        return '';
+    }
+
     public function maskMoney(?string $value): string
     {
         $valueConverted = '0,00';
