@@ -112,18 +112,10 @@ trait FilterTrait
     }
 
     public function filterJapaneseLetters($text) {
-        // Remove caracteres especiais, incluindo emojis
-        // $text = preg_replace('/[^\p{L}\p{N}\s]/u', '', $text);
-    
-        // Remove letras em japonês
-        $text = preg_replace('/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u', '', $text);
-    
-        // Remove espaços extras e converte espaços múltiplos em um único espaço
-        // $text = preg_replace('/\s+/', ' ', $text);
-    
-        // Remove espaços no início e no final da string
-        // $text = trim($text);
-    
-        return $text;
+        // Expressão regular para encontrar caracteres japoneses
+        $pattern = '/[\p{Hiragana}\p{Katakana}\p{Han}]+/u';
+
+        // Substituir os caracteres japoneses por uma string vazia    
+        return preg_replace($pattern, '', $text);
     }
 }
