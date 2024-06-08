@@ -19,8 +19,6 @@ trait ValidateTrait
 
                 $newPhone = $part1 . '9' . $part2;
             }
-
-            $newPhone = $phone;
         }
         
         return $newPhone;
