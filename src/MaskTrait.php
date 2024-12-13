@@ -30,6 +30,11 @@ trait MaskTrait
         return $this->apply($cnpj, '##.###.###/####-##');
     }
 
+    public function maskCpf(string $cpf): string
+    {
+        return $this->apply($cpf, '###.###.###-##');
+    }
+
     public function maskWhatsapp(string $whatsapp): string
     {
         return $this->apply($whatsapp, '+55 (##) #####-####');
