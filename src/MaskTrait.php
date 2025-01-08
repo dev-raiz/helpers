@@ -97,4 +97,11 @@ trait MaskTrait
     
         return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
     }
+
+    public function minutesToHours($minutes) {
+        $hours       = floor($minutes / 60);
+        $restMinutes = $minutes % 60;
+
+        return sprintf('%02d:%02d', $hours, $restMinutes);
+    }
 }
