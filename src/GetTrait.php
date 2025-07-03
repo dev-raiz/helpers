@@ -4,7 +4,7 @@ namespace devraiz;
 
 trait GetTrait
 {
-    public function dayMajorDateOfTheMonth($year, $month)
+    public function lastDayOfTheMonth($year, $month)
     {
         if (((fmod($year, 4) == 0) and (fmod($year, 100) != 0)) or (fmod($year, 400) == 0)) {
             $februaryDays = 29;
